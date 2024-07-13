@@ -9,7 +9,7 @@
                         :style="{ 'height': state.beforeAsk ? '70%' : '10%', 'transition': !state.beforeAsk ? 'height 1s' : 'none' }">
                         <input type="text" required :placeholder="state.placeholder" v-model="state.msg"
                             @keyup.enter="getAnswer">
-                        <button type="submit" class="btn-ask" v-on:click="getAnswer">
+                        <button type="submit" class="btn-ask" v-on:click="getAnswer" aria-label="Submit">
                             <div class="loader" v-if="!state.beforeAsk && state.load"></div>
                             <i class="fa-solid fa-arrow-up" v-else></i>
                         </button>
@@ -31,13 +31,14 @@ import { useHead } from 'nuxt/app';
 
 useHead({
     title: 'Ask Ai',
+    link: [
+        { rel: 'stylesheet', href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" }
+    ],
     meta: [
-        {
-            name: 'description', content: 'Tanyakan apa saja pada AI di website ini!',
-            name: 'keywords', content: 'ai, ask ai, tanya ai, chat gpt',
-            name: 'author', content: 'M Radya I',
-            name: 'robots', content: 'index, follow'
-        }
+        { name: 'description', content: 'Tanyakan apa saja pada AI di website ini!' },
+        { name: 'keywords', content: 'ai, ask ai, tanya ai, chat gpt' },
+        { name: 'author', content: 'M Radya I' },
+        { name: 'robots', content: 'index, follow' }
     ]
 })
 
@@ -73,5 +74,4 @@ function getAnswer() {
 
 <style>
 @import url("/assets/css/style.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
 </style>
