@@ -5,10 +5,17 @@
             <main>
                 <div class="wrapper">
                     <h2><span style="color: var(--secondary-color);">Ask</span>.Ai</h2>
-                    <div class="ask-input" :style="{'height' : state.beforeAsk ? '70%' : '10%', 'transition' : !state.beforeAsk ? 'height 1s' : 'none'}">
-                        <input type="text" placeholder="Ask...">
-                        <button class="btn-ask"><i class="fa-solid fa-arrow-up"></i></button>
+                    <div class="ask-input"
+                        :style="{ 'height': state.beforeAsk ? '70%' : '10%', 'transition': !state.beforeAsk ? 'height 1s' : 'none' }">
+                        <input type="text" required :placeholder="state.placeholder" v-model="state.msg" @keyup.enter="getAnswer">
+                        <button type="submit" class="btn-ask" v-on:click="getAnswer">
+                            <div class="loader" v-if="!state.beforeAsk && state.load"></div>
+                            <i class="fa-solid fa-arrow-up" v-else></i>
+                        </button>
                     </div>
+                    <section>
+                        <Card v-if="state.showCard" :isLoading="state.load" :msg="state.msg" />
+                    </section>
                 </div>
             </main>
         </div>
@@ -18,18 +25,43 @@
 <script>
 import { reactive } from 'vue';
 import Navbar from '../layouts/navbar.vue';
+import Card from '../layouts/cardAnswer.vue';
 
 export default {
     components: {
-        Navbar
+        Navbar,
+        Card
     },
     setup() {
         const state = reactive({
             title: 'Home',
-            beforeAsk: true
+            msg: null,
+            placeholder: 'Ask...',
+            beforeAsk: true,
+            showCard: false,
+            load: false
         })
 
-        return { state }
+        function getAnswer() {
+            if (state.msg != null) {
+                state.showCard = false
+                state.beforeAsk = false
+                state.load = true
+                setTimeout(() => {
+                    state.showCard = true
+                }, 1000);
+                setTimeout(() => {
+                    state.load = false
+                }, 5000);
+            } else {
+                state.placeholder = "Inputnya disini dulu!"
+                setTimeout(() => {
+                    state.placeholder = "Ask..."
+                }, 1200);
+            }
+        }
+
+        return { state, getAnswer }
     }
 }
 </script>

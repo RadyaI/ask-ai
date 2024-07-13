@@ -1,4 +1,6 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.mjs
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
@@ -8,4 +10,5 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-07-11',
+
 });
