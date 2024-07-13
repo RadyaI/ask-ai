@@ -7,7 +7,8 @@
                     <h2><span style="color: var(--secondary-color);">Ask</span>.Ai</h2>
                     <div class="ask-input"
                         :style="{ 'height': state.beforeAsk ? '70%' : '10%', 'transition': !state.beforeAsk ? 'height 1s' : 'none' }">
-                        <input type="text" required :placeholder="state.placeholder" v-model="state.msg" @keyup.enter="getAnswer">
+                        <input type="text" required :placeholder="state.placeholder" v-model="state.msg"
+                            @keyup.enter="getAnswer">
                         <button type="submit" class="btn-ask" v-on:click="getAnswer">
                             <div class="loader" v-if="!state.beforeAsk && state.load"></div>
                             <i class="fa-solid fa-arrow-up" v-else></i>
@@ -22,48 +23,52 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import { reactive } from 'vue';
 import Navbar from '../layouts/navbar.vue';
 import Card from '../layouts/cardAnswer.vue';
+import { useHead } from 'nuxt/app';
 
-export default {
-    components: {
-        Navbar,
-        Card
-    },
-    setup() {
-        const state = reactive({
-            title: 'Home',
-            msg: null,
-            placeholder: 'Ask...',
-            beforeAsk: true,
-            showCard: false,
-            load: false
-        })
-
-        function getAnswer() {
-            if (state.msg != null) {
-                state.showCard = false
-                state.beforeAsk = false
-                state.load = true
-                setTimeout(() => {
-                    state.showCard = true
-                }, 1000);
-                setTimeout(() => {
-                    state.load = false
-                }, 5000);
-            } else {
-                state.placeholder = "Inputnya disini dulu!"
-                setTimeout(() => {
-                    state.placeholder = "Ask..."
-                }, 1200);
-            }
+useHead({
+    title: 'Ask Ai',
+    meta: [
+        {
+            name: 'description', content: 'Tanyakan apa saja pada AI di website ini!',
+            name: 'keywords', content: 'ai, ask ai, tanya ai, chat gpt',
+            name: 'author', content: 'M Radya I',
+            name: 'robots', content: 'index, follow'
         }
+    ]
+})
 
-        return { state, getAnswer }
+const state = reactive({
+    title: 'Home',
+    msg: null,
+    placeholder: 'Ask...',
+    beforeAsk: true,
+    showCard: false,
+    load: false
+})
+
+function getAnswer() {
+    if (state.msg != null) {
+        state.showCard = false
+        state.beforeAsk = false
+        state.load = true
+        setTimeout(() => {
+            state.showCard = true
+        }, 1000);
+        setTimeout(() => {
+            state.load = false
+        }, 5000);
+    } else {
+        state.placeholder = "Inputnya disini dulu!"
+        setTimeout(() => {
+            state.placeholder = "Ask..."
+        }, 1200);
     }
 }
+
 </script>
 
 <style>
