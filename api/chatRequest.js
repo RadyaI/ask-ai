@@ -7,7 +7,7 @@ const req = axios.create({
 
 async function request(body) {
     const result = await req.post('/chat', {
-        msg: body,
+        msg: "Selalu jawab dengan bahasa indonesia apapun bahasa pertanyaannya, pertanyaan: " + body,
         password: process.env.PASSWORD
     })
 
