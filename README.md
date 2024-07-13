@@ -3,7 +3,7 @@ Website untuk bertanya apapun ke ai, web ini menggunakan api dari [Groq](https:/
 diakses [disini](https://ask-ai.radya.fun) 
 
 ## Tampilan
-![Deskripsi Foto](https://drive.google.com/uc?export=view&id=1-O3h6QlOoJtQqgrGhbB8MQv4BQ4sMK-)
+![Deskripsi Foto](https://drive.google.com/uc?export=view&id=1-O3h6QlOoJtQqgrGhbB8MQv4BQ4sMK-F)
 
 ### Fitur
 
