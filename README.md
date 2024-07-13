@@ -1,48 +1,13 @@
-# Nuxt Example
+# Ask Ai
+Website untuk bertanya apapun ke ai, web ini menggunakan api dari [Groq](https://groq.com) dan menggunakan model `llama3-8b-8192`, websitenya bisa 
+diakses [disini](https://ask-ai.radya.fun) 
 
-Deploy your [Nuxt](https://nuxt.com) project to Vercel with zero configuration.
+## Tampilan
+![Deskripsi Foto](https://drive.google.com/uc?export=view&id=1-O3h6QlOoJtQqgrGhbB8MQv4BQ4sMK-)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/nuxtjs&template=nuxtjs)
+### Fitur
 
-_Live Example: https://nuxtjs-template.vercel.app_
+- *Login* Menggunakan google
+- *10 kali* batas pertanyaan jika tidak login (tidak ada batasan ketika sudah login)
 
-Look at the [Nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment#presets) for more information.
+Made by [Radya](https://radya.fun)
