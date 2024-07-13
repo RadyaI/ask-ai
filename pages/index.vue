@@ -45,7 +45,7 @@ useHead({
 
 const state = reactive({
     title: 'Home',
-    msg: null,
+    msg: "",
     placeholder: 'Ask...',
     beforeAsk: true,
     showCard: false,
@@ -53,7 +53,7 @@ const state = reactive({
 })
 
 function getAnswer() {
-    if (state.msg != null) {
+    if (state.msg != "") {
         state.showCard = false
         state.beforeAsk = false
         state.load = true
