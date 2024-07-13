@@ -10,4 +10,7 @@ diakses [disini](https://ask-ai.radya.fun)
 - *Login* Menggunakan google
 - *10 kali* batas pertanyaan jika tidak login (tidak ada batasan ketika sudah login)
 
+![Deskripsi Foto](https://drive.google.com/uc?export=view&id=1t0ezYFA3Gtz-nc-Au0PtiiDkollIF2rR)
+
+
 Made by [Radya](https://radya.fun)
