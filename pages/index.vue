@@ -1,10 +1,11 @@
 <template>
     <div>
+        <About v-if="state.showAbout" />
         <div class="container">
-            <Navbar />
-            <main>
+            <Navbar @showAbout="toggleAbout" />
+            <main @click="state.showAbout = false">
                 <div class="wrapper">
-                    <h2><span style="color: var(--secondary-color);">Ask</span>.Ai</h2>
+                    <h2><span style="color: var(--secondary-color);">Hariz</span>.Ai</h2>
                     <div class="ask-input"
                         :style="{ 'height': state.beforeAsk ? '70%' : '10%', 'transition': !state.beforeAsk ? 'height 1s' : 'none' }">
                         <input type="text" required :placeholder="state.placeholder" v-model="state.msg"
@@ -31,6 +32,7 @@
 import { reactive } from 'vue';
 import Navbar from '../layouts/navbar.vue';
 import Card from '../layouts/cardAnswer.vue';
+import About from '../layouts/about.vue';
 import { useHead } from 'nuxt/app';
 
 useHead({
@@ -49,8 +51,14 @@ const state = reactive({
     placeholder: 'Ask...',
     beforeAsk: true,
     showCard: false,
-    load: false
+    load: false,
+
+    showAbout: false
 })
+
+function toggleAbout(value) {
+    state.showAbout = value
+}
 
 function getAnswer() {
     if (state.msg != "") {

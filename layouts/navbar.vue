@@ -2,19 +2,34 @@
     <div>
         <nav>
             <div class="menu">
-                <div class="menu-list">About</div>
+                <div class="menu-list" @click="toggle">About</div>
                 <div class="menu-list">Login</div>
             </div>
         </nav>
     </div>
 </template>
 
-<style scoped>
+<script setup>
+import { reactive, defineEmits } from 'vue';
 
-:root{
-    --primary-color:#030420;
-    --secondary-color:#00dc82;
-    --text-color:#ffffff;
+const emit = defineEmits(['showAbout'])
+
+const state = reactive({
+    toggle: false
+})
+
+function toggle() {
+    state.toggle = true
+    emit('showAbout', state.toggle)
+}
+
+</script>
+
+<style scoped>
+:root {
+    --primary-color: #030420;
+    --secondary-color: #00dc82;
+    --text-color: #ffffff;
 }
 
 nav {
@@ -27,7 +42,7 @@ nav {
     align-items: center;
 }
 
-nav .menu{
+nav .menu {
     /* border: 1px solid white; */
     width: 200px;
     margin-right: 100px;
@@ -36,14 +51,14 @@ nav .menu{
     align-items: center;
 }
 
-nav .menu .menu-list{
+nav .menu .menu-list {
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.5s;
 }
 
-nav .menu .menu-list:hover{
+nav .menu .menu-list:hover {
     color: var(--secondary-color);
 }
 </style>
