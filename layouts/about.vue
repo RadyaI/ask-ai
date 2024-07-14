@@ -58,9 +58,6 @@ a{
     color: lightblue;
 }
 
-.card .footer{
-
-}
 
 @media only screen and (max-width:700px) {
     .card {
