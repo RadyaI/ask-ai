@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="card">
-            <p>Sebuah ai yang menggunakan api dari <a href="https://groq.com">Groq</a> dan menggunakan model
+            <p>Sebuah ai yang menggunakan api dari <a href="https://console.groq.com">Groq</a> dan menggunakan model
                 <span>llama3-8b-8192</span>, Ai ini akan menjawab semua pertanyaan kalian menggunakan bahasa indonesia dan ai ini tetap akan menjawab dengan bahasa indonesia meskipun kalian bertanya menggunakan bahasa manapun.
             </p>
             <div class="footer">
