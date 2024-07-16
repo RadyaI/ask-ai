@@ -5,7 +5,7 @@
             <Navbar @showAbout="toggleAbout" />
             <main @click="state.showAbout = false">
                 <div class="wrapper">
-                    <h2><span style="color: var(--secondary-color);">Hariz</span>.Ai</h2>
+                    <h2><span style="color: var(--secondary-color);">Radya</span>.Ai</h2>
                     <div class="ask-input"
                         :style="{ 'height': state.beforeAsk ? '70%' : '10%', 'transition': !state.beforeAsk ? 'height 1s' : 'none' }">
                         <input type="text" required :placeholder="state.placeholder" v-model="state.msg"
